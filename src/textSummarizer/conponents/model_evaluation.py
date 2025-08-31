@@ -17,7 +17,7 @@ class ModelEvaluation:
             yield list_of_elements[i : i + batch_size]
     
     def calculate_metric_on_test_ds(self,dataset, metric, model, tokenizer,
-                               batch_size=16, device=device,
+                               batch_size=16, device="cuda",
                                column_text="article",
                                column_summary="highlights"):
         article_batches = list(self.generate_batch_sized_chunks(dataset[column_text], batch_size))
@@ -61,7 +61,7 @@ class ModelEvaluation:
         rouge_names = ["rouge1", "rouge2", "rougeL", "rougeLsum"]
         
         score = self.calculate_metric_on_test_ds(
-            dataset_samsum_pt['test'][0:10], rouge_metric, model_pegasus, tokenizer, batch_size = 2, column_text = 'dialogue', column_summary= 'summary'
+            dataset_samsum_pt['test'][0:10], rouge_metric, model_pegasus, tokenizer, batch_size = 2, device=device ,column_text = 'dialogue', column_summary= 'summary'
         )
 
         # Directly use the scores without accessing fmeasure or mid
