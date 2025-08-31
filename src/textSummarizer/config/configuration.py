@@ -69,7 +69,7 @@ class ConfigurationManager:
         model_eval_config = ModelEvalConfig(
             root_dir=config.root_dir,
             data_path=config.data_path,
-            model_path=config.data_path,
+            model_path=config.model_path,
             tokenizer_path=config.tokenizer_path,
             metric_file_name=config.metric_file_name
         )
