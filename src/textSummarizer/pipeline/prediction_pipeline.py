@@ -19,4 +19,5 @@ class PredictionPipeline:
         
         print("\nModel Summary:")
         print(output)
+        return output
         
