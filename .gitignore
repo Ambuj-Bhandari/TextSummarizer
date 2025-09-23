@@ -11,5 +11,5 @@ wheels/
 .python-version
 pyproject.toml
 uv.lock
-artifacts/
 logs/
+artifacts/
