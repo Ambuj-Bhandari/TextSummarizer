@@ -20,4 +20,3 @@ fastapi
 uvicorn
 Jinja2
 evaluate
-streamlit
