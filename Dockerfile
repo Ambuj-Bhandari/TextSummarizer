@@ -6,10 +6,10 @@ WORKDIR /app
 
 COPY . /app
 
-RUN pip install -r requirements.txt
-RUN pip install -upgrade accelerate
-RUN pip uninstall -y transformers accelerate
-RUN pip install -y transformers accelerate
+RUN pip install -r requirements.txt --root-user-action
+RUN pip install -upgrade accelerate --root-user-action
+RUN pip uninstall -y transformers accelerate --root-user-action
+RUN pip install -y transformers accelerate --root-user-action
 
 CMD ["streamlit run", "streamlit_app.py" ]
 
